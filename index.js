@@ -36,7 +36,7 @@ function viewCart() {
     }
     return `In your cart, you have ${cartStuff.join(", ")}, and ${lastItem}`;
     }
-  
+
 }
 
 function total() {
@@ -63,8 +63,9 @@ return cart;
 
 function placeOrder(cardNumber) {
   if (cardNumber != undefined){
-    cart.splice(0, cart.length);
-    return `Your total cost is $${total()}, which will be charged to the card ${cardNumber}.`;
+    cart = [];
+    let totalPrint = total();
+    return `Your total cost is $${totalPrint}, which will be charged to the card ${cardNumber}.`;
   }
   return "Sorry, we don't have a credit card on file for you.";
   // write your code here
