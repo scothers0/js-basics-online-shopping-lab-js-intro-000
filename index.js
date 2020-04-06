@@ -64,7 +64,7 @@ return cart;
 }
 
 function placeOrder(cardNumber) {
-  if (cardNumber.toString().length > 0){
+  if (toString(cardNumber).length > 0){
     var cart = [];
     return `Your total cost is $${total()}, which will be charged to the card ${cardNumber}.`;
   }
