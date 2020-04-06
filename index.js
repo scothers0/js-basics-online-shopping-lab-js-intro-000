@@ -36,7 +36,7 @@ function viewCart() {
     }
     return `In your cart, you have ${cartStuff.join(", ")}, and ${lastItem}`;
     }
-  }
+  
 }
 
 function total() {
