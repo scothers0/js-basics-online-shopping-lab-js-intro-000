@@ -19,6 +19,7 @@ function addToCart(item) {
 }
 
 function viewCart() {
+  let cartStuff = [];
   if (cart.length === 0){
     return "Your shopping cart is empty.";
   }
@@ -29,14 +30,11 @@ function viewCart() {
     return `In your cart, you have ${cart[0].itemName} at $${cart[0].itemPrice}, and ${cart[1].itemName} at $${cart[1].itemPrice}.`;
   }
   else {
-    let returnedString = `In your cart, you have `;
-    let printOut =``;
-    for (var i = 0; i < cart.length; i ++){
-      if (i != cart.length - 1){
-        printOut = returnedString.concat(`${cart[i].itemName} at $${cart[i].itemPrice}, `);
-      }
-      returnedString.concat(`and ${cart[i].itemName} at $${cart[i].itemPrice}.`);
-      return returnedString;
+    let lastItem = `${cart[cart.length - 1].itemName} at $${cart[cart.length - 1].itemPrice}.`;
+    for (var i = 0; i < cart.length - 1; i++){
+      cartStuff.push(`${cart[i].itemName} at $${cart[i].itemPrice}`);
+    }
+    return `In your cart, you have ${cartStuff.join(", ")}, and ${lastItem}`;
     }
   }
 }
